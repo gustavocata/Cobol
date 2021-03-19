@@ -1,0 +1,4 @@
+- Arrastar pasta para icone dosbox;
+- ISAM 
+Compilar -> COBOL Cep001,,,
+Executar -> Runcob Cep001

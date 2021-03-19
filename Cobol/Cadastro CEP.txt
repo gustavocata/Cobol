@@ -1,0 +1,77 @@
+CADASTRO DE CEP
+numero 99999.999
+logradouro x------------x
+bairro x-------------x
+cidade x------------x
+uf XX
+situação X x----------x
+
+mensagem  
+
+--------------------------------------------------------------------------------------------------
+
+numero cep 9(8)
+logradouro x(35)
+Bairro x(25)
+Cidade x(25)
+UF x(2)
+Situação x(1)
+
+
+
+CEP > 01000.000
+UF = unidade valida
+
+
+TEL002
+  
+cep002
+
+cadcep
+
+
+
+
+------------------------------------
+01TABUF
+  03 FILLER PIC X(40) VALUE "SP RJ PE SC PQ RS"
+  03 FILLER PIC X(12)
+
+01TUF REDEFINES TABUF
+   03 T-UF PIC X(02) OCCURS 26 TIMES
+
+01IND      PIC 9(02) VALUE ZEROS.
+
+
+
+PROCEDURE
+
+INC-009 
+ACCEPT (L, C) UF
+MOVE 1 TO IND.
+
+INC-009-A
+IF UF NOT= T-UF(IND)
+IF IND= 26
+
+MENSAGEM "ERRO DE UF"
+GO TO INC-009
+ELSE
+ADD 1 TO IND 
+GO TO INC-009-A
+ ELSE
+UF CORRETO
+
+
+
+
+
+IF SITUACAO = "a" OR "A"
+MOVE TSIT(1) TO SITU
+ELSE IF SITUACAO = "i" or "I"
+MOVE TSIT(2) TO SITU
+ELSE IF SITUAÇAO = "c" or "C"
+MOVE TSIT(3) TO SITU 
+ELSE
+MOVE TSIT(4) TO TSITU 
+DISPLAY TELA002
